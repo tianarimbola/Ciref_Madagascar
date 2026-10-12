@@ -1,0 +1,32 @@
+databases:
+  - name: ciref-db
+    databaseName: ciref
+    user: postgres
+    plan: free
+
+services:
+  - type: web
+    name: ciref-app
+    env: docker
+    plan: free
+    envVars:
+      - key: APP_NAME
+        value: Laravel
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://ciref-app.onrender.com
+      - key: APP_KEY
+        value: base64:TxHlynlsNcEYyfQxxsQj+h4X5v78a6v7fS9EYDmHuYA=
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ciref-db
+          property: connectionString
+      - key: LOG_CHANNEL
+        value: stack
+      - key: LOG_LEVEL
+        value: debug
