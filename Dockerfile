@@ -18,6 +18,9 @@ COPY . /var/www/html
 # Set working directory
 WORKDIR /var/www/html
 
+# Create storage and cache directories if they don't exist
+RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache bootstrap/cache
+
 # Change document root to Laravel's public folder
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
