@@ -1,7 +1,6 @@
 databases:
   - name: ciref
     databaseName: ciref
-    user: postgres
     plan: free
 
 services:
