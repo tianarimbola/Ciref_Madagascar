@@ -28,7 +28,7 @@ WORKDIR /var/www/html
 RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache bootstrap/cache
 
 # Install PHP dependencies via Composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader -vvv
 
 # Change document root to Laravel's public folder
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
