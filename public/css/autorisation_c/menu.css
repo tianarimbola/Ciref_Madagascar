@@ -1,0 +1,8 @@
+a:hover{
+    background-color: white;
+}
+.menu-item.active {
+    background-color: red; 
+   /* Couleur d'arrière-plan différente pour l'élément actif */
+ /* Texte en gras pour l'élément actif */
+}
