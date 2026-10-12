@@ -8,10 +8,11 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libcurl4-openssl-dev \
+    libgd-dev \
     zip \
     unzip \
     git \
-    && docker-php-ext-install pdo pdo_pgsql zip mbstring xml bcmath ctype intl curl
+    && docker-php-ext-install pdo pdo_pgsql zip mbstring xml bcmath ctype intl curl gd dom fileinfo
 
 # Install Composer globally
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
